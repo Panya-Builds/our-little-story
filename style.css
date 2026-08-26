@@ -1,0 +1,1411 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: #f7ecd8;
+    color: #5d3d3d;
+    overflow-x: hidden;
+    font-family: "Playfair Display", serif;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+.screen {
+    width: 100%;
+    min-height: 100svh;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+/* =================================================
+   INTRO
+================================================= */
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+}
+
+
+.intro-bg {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,.35) 0 3px,
+            transparent 4px
+        ),
+
+        radial-gradient(
+            circle at 80% 35%,
+            rgba(255,255,255,.25) 0 4px,
+            transparent 5px
+        ),
+
+        linear-gradient(
+            135deg,
+            #d98298,
+            #f1b3b3,
+            #e18da1
+        );
+}
+
+
+.intro-bg::after {
+    content: "";
+
+    position: absolute;
+
+    inset: -50px;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.18) 0 2px,
+            transparent 3px
+        );
+
+    background-size: 55px 55px;
+
+    animation:
+        drift 15s linear infinite;
+}
+
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+
+    animation:
+        introAppear 1.5s ease;
+}
+
+
+.small-text {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    opacity: .85;
+
+    margin-bottom: 25px;
+}
+
+
+.intro h1 {
+    font-family: "Caveat", cursive;
+
+    font-size: 78px;
+
+    line-height: .75;
+
+    font-weight: 500;
+
+    text-shadow:
+        0 5px 20px rgba(80,30,40,.2);
+}
+
+
+.intro h1 span {
+    font-size: .78em;
+}
+
+
+.rose {
+    font-size: 45px;
+
+    margin:
+        45px 0 25px;
+
+    animation:
+        floating 2.5s ease-in-out infinite;
+}
+
+
+.tap {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    opacity: .8;
+}
+
+
+
+/* =================================================
+   OPEN PAGE
+================================================= */
+
+.paper {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff8ea,
+            #f1dfbf
+        );
+}
+
+
+.open-content {
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+.flower {
+    font-size: 82px;
+
+    animation:
+        floating 3s ease-in-out infinite;
+}
+
+
+.open-content h2 {
+    font-family: "Caveat", cursive;
+
+    font-size: 40px;
+
+    line-height: .9;
+
+    font-weight: 500;
+
+    margin:
+        25px 0 35px;
+}
+
+
+#openButton {
+    border:
+        1px solid rgba(100,60,60,.2);
+
+    background:
+        rgba(255,255,255,.55);
+
+    color: #704848;
+
+    border-radius: 50px;
+
+    padding:
+        17px 30px;
+
+    font-family:
+        "Playfair Display", serif;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 35px rgba(100,50,50,.12);
+
+    animation:
+        buttonPulse 2s infinite;
+
+    transition:
+        transform .2s ease;
+}
+
+
+#openButton:active {
+    transform: scale(.94);
+}
+
+
+.tiny {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    opacity: .5;
+
+    margin-top: 20px;
+}
+
+
+
+/* =================================================
+   FLOATING HEARTS
+================================================= */
+
+.heart {
+    position: absolute;
+
+    font-size: 40px;
+
+    opacity: .16;
+
+    animation:
+        floatingHeart 5s ease-in-out infinite;
+}
+
+
+.h1 {
+    left: 10%;
+    top: 20%;
+}
+
+
+.h2 {
+    right: 10%;
+    top: 65%;
+
+    animation-delay: 1s;
+}
+
+
+.h3 {
+    left: 72%;
+    top: 15%;
+
+    animation-delay: 2s;
+}
+
+
+
+/* =================================================
+   PIN
+================================================= */
+
+.pin-box {
+    width: 90%;
+
+    max-width: 340px;
+
+    text-align: center;
+}
+
+
+.lock {
+    font-size: 55px;
+
+    margin-bottom: 12px;
+}
+
+
+.pin-box h2 {
+    font-family: "Caveat", cursive;
+
+    font-size: 38px;
+
+    font-weight: 500;
+}
+
+
+.pin-box > p {
+    font-size: 13px;
+
+    opacity: .6;
+
+    margin-top: 8px;
+}
+
+
+.dots {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin: 25px 0;
+}
+
+
+.dots span {
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid #a87979;
+
+    transition: .2s;
+}
+
+
+.dots span.active {
+    background: #a87979;
+}
+
+
+.keypad {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+
+.keypad button {
+    height: 58px;
+
+    border:
+        1px solid rgba(100,60,60,.12);
+
+    background:
+        rgba(255,255,255,.55);
+
+    border-radius: 50%;
+
+    font-size: 18px;
+
+    color: #704747;
+
+    cursor: pointer;
+
+    transition:
+        transform .15s ease,
+        background .15s ease;
+}
+
+
+.keypad button:active {
+    transform: scale(.88);
+}
+
+
+#wrongPin {
+    height: 20px;
+
+    margin-top: 12px;
+
+    color: #a85d68;
+}
+
+
+
+/* =================================================
+   LOADING
+================================================= */
+
+.loading {
+    background: #f7ecd8;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.loader {
+    font-size: 65px;
+
+    animation:
+        loaderSpin 2s linear infinite;
+}
+
+
+.loading p {
+    margin-top: 30px;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    opacity: .55;
+}
+
+
+
+/* =================================================
+   MAIN
+================================================= */
+
+#mainPage {
+    background: #f7ecd8;
+}
+
+
+
+/* =================================================
+   HERO
+================================================= */
+
+.hero {
+    min-height: auto;
+
+    padding:
+        45px 27px 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.eyebrow {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    opacity: .5;
+
+    margin-bottom: 25px;
+}
+
+
+.hero h1 {
+    font-family: "Caveat", cursive;
+
+    font-size: 80px;
+
+    line-height: .76;
+
+    font-weight: 500;
+}
+
+
+.hero h1 i {
+    color: #a85d68;
+}
+
+
+.scroll {
+    margin-top: 35px;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    opacity: .45;
+}
+
+
+
+/* =================================================
+   GALLERY
+================================================= */
+
+.gallery {
+    padding:
+        90px 20px;
+}
+
+
+.section-number {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    opacity: .4;
+}
+
+
+.gallery h2 {
+    font-family: "Caveat", cursive;
+
+    font-size: 58px;
+
+    line-height: .8;
+
+    font-weight: 500;
+
+    margin-top: 15px;
+}
+
+
+.gallery h2 i {
+    color: #a85d68;
+}
+
+
+.photo-gallery {
+    position: relative;
+
+    height: 1050px;
+
+    margin-top: 60px;
+}
+
+
+.polaroid {
+    position: absolute;
+
+    width: 57%;
+
+    background: #fffdf8;
+
+    padding: 9px 9px 28px;
+
+    box-shadow:
+        0 15px 35px rgba(70,40,30,.17);
+
+    /* Initially hidden */
+    opacity: 0;
+
+    transform:
+        translateY(100px)
+        scale(.92)
+        rotate(0deg);
+
+    /* Smooth reveal */
+    transition:
+        opacity .9s ease,
+        transform 1s cubic-bezier(.22,.61,.36,1);
+}
+
+/* When photo enters viewport */
+.polaroid.show {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1)
+        rotate(var(--rotation));
+}
+
+.polaroid img {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1.16;
+
+    object-fit: cover;
+}
+
+.polaroid p {
+    font-family: "Caveat", cursive;
+
+    font-size: 20px;
+
+    margin-top: 7px;
+}
+
+
+/* PHOTO POSITIONS */
+
+.photo1 {
+    top: 0;
+
+    left: 1%;
+
+    --rotation: -7deg;
+}
+
+
+.photo2 {
+    top: 145px;
+
+    right: 0;
+
+    --rotation: 8deg;
+}
+
+
+.photo3 {
+    top: 340px;
+
+    left: 9%;
+
+    --rotation: 5deg;
+}
+
+
+.photo4 {
+    top: 545px;
+
+    right: 4%;
+
+    --rotation: -7deg;
+}
+
+
+.photo5 {
+    top: 740px;
+
+    left: 10%;
+
+    --rotation: 6deg;
+}
+
+
+
+/* =================================================
+   LETTER
+================================================= */
+
+.letter {
+    padding:
+        90px 20px;
+
+    background: #ead8ba;
+}
+
+
+.letter h2 {
+    font-family: "Caveat", cursive;
+
+    font-size: 58px;
+
+    line-height: .8;
+
+    font-weight: 500;
+
+    margin-top: 15px;
+}
+
+
+.letter h2 i {
+    color: #a85d68;
+}
+
+
+.letter-paper {
+    max-width: 620px;
+
+    margin:
+        55px auto 0;
+
+    padding:
+        45px 26px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffaf0 0,
+            #fffaf0 31px,
+            #eadfd0 32px
+        );
+
+    box-shadow:
+        0 20px 50px
+        rgba(80,50,30,.15);
+
+    transform: rotate(-1deg);
+}
+
+
+.date {
+    text-align: right;
+
+    font-size: 10px;
+
+    opacity: .5;
+
+    margin-bottom: 40px;
+}
+
+
+.letter-paper h3 {
+    font-family: "Caveat", cursive;
+
+    font-size: 32px;
+
+    margin-bottom: 22px;
+}
+
+
+.letter-paper p {
+    font-family: "Caveat", cursive;
+
+    font-size: 22px;
+
+    line-height: 1.45;
+
+    margin-bottom: 25px;
+}
+
+
+.signature {
+    font-family: "Caveat", cursive;
+
+    text-align: right;
+
+    font-size: 32px;
+
+    margin-top: 35px;
+}
+
+
+
+/* =================================================
+   ENDING
+================================================= */
+
+.ending {
+    min-height: 100svh;
+
+    padding:
+        70px 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.big-heart {
+    font-size: 125px;
+
+    color: #ae626b;
+
+    animation:
+        heartbeat 2s infinite;
+}
+
+
+.ending > p {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    opacity: .5;
+
+    margin: 30px 0;
+}
+
+
+.ending h1 {
+    font-family: "Caveat", cursive;
+
+    font-size: 80px;
+
+    line-height: .78;
+
+    font-weight: 500;
+}
+
+
+.ending h1 i {
+    color: #a85d68;
+}
+
+
+.ending-message {
+    font-family: "Caveat", cursive;
+
+    font-size: 25px;
+
+    margin-top: 35px;
+}
+
+
+.final-rose {
+    font-size: 40px;
+
+    margin-top: 50px;
+}
+
+
+
+/* =================================================
+   ANIMATIONS
+================================================= */
+
+@keyframes introAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes floating {
+
+    0%, 100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-12px);
+    }
+
+}
+
+
+@keyframes floatingHeart {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-8deg);
+    }
+
+    50% {
+        transform:
+            translateY(-30px)
+            rotate(8deg);
+    }
+
+}
+
+
+@keyframes buttonPulse {
+
+    0%, 100% {
+        box-shadow:
+            0 12px 35px
+            rgba(100,50,50,.12);
+    }
+
+    50% {
+        box-shadow:
+            0 12px 45px
+            rgba(170,80,90,.3);
+    }
+
+}
+
+
+@keyframes loaderSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform:
+            scale(1);
+    }
+
+    15% {
+        transform:
+            scale(1.12);
+    }
+
+    30% {
+        transform:
+            scale(1);
+    }
+
+    45% {
+        transform:
+            scale(1.08);
+    }
+
+}
+
+
+@keyframes drift {
+
+    from {
+        transform:
+            translate(0,0);
+    }
+
+    to {
+        transform:
+            translate(60px,60px);
+    }
+
+}
+
+
+
+/* =================================================
+   DESKTOP
+================================================= */
+
+@media (min-width: 700px) {
+
+    .photo-gallery {
+        max-width: 700px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+}
+
+
+
+/* =================================================
+   MOBILE
+================================================= */
+
+@media (max-width: 500px) {
+
+    .intro h1 {
+        font-size: 70px;
+    }
+
+
+    .hero h1 {
+        font-size: 70px;
+    }
+
+
+    .gallery h2,
+    .letter h2 {
+        font-size: 54px;
+    }
+
+
+    .photo-gallery {
+        height: 900px;
+    }
+
+
+    .polaroid {
+        width: 62%;
+    }
+
+
+    .photo1 {
+        top: 0;
+        left: 0;
+    }
+
+
+    .photo2 {
+        top: 125px;
+        right: 0;
+    }
+
+
+    .photo3 {
+        top: 300px;
+        left: 5%;
+    }
+
+
+    .photo4 {
+        top: 475px;
+        right: 0;
+    }
+
+
+    .photo5 {
+        top: 650px;
+        left: 8%;
+    }
+
+
+    .letter-paper {
+        padding:
+            40px 22px;
+    }
+
+
+    .letter-paper p {
+        font-size: 21px;
+    }
+
+
+    .ending h1 {
+        font-size: 70px;
+    }
+
+    .hero {
+    min-height: auto;
+    padding: 35px 25px 30px;
+}
+
+.hero h1 {
+    font-size: 68px;
+}
+
+.scroll {
+    margin-top: 30px;
+}
+
+}
+
+/* =========================================================
+   PREMIUM WEBSITE OPENING ANIMATION
+   ========================================================= */
+
+.opening-animation {
+    position: fixed;
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff8f1 0%,
+            #f8e5d8 45%,
+            #edc8c5 100%
+        );
+
+    animation: openingBackground 0.8s ease forwards;
+}
+
+
+/* SOFT GLOW */
+
+.opening-glow {
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.9),
+            rgba(255,190,200,.35),
+            transparent 70%
+        );
+
+    filter: blur(8px);
+
+    animation:
+        openingGlow 2s ease-in-out infinite;
+}
+
+
+/* HEART CONTAINER */
+
+.opening-heart {
+    position: relative;
+
+    width: 100px;
+    height: 100px;
+
+    z-index: 5;
+
+    animation:
+        heartAppear 1s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+}
+
+
+/* BOTH HEART HALVES */
+
+.heart-piece {
+    position: absolute;
+
+    top: 0;
+
+    width: 55px;
+    height: 85px;
+
+    color: #c87583;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 95px;
+    line-height: 75px;
+
+    filter:
+        drop-shadow(
+            0 10px 15px
+            rgba(150,70,80,.22)
+        );
+
+    transition:
+        transform 1.15s
+        cubic-bezier(.77,0,.18,1),
+        opacity .8s ease;
+}
+
+
+/* LEFT HALF */
+
+.heart-left {
+    left: 0;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            45% 70%,
+            0 100%
+        );
+}
+
+
+/* RIGHT HALF */
+
+.heart-right {
+    right: 0;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            55% 70%,
+            0 100%
+        );
+}
+
+
+/* LITTLE TEXT */
+
+.opening-text {
+    position: absolute;
+
+    top: calc(50% + 82px);
+
+    width: 100%;
+
+    text-align: center;
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+    color: #80545b;
+
+    opacity: 0;
+
+    animation:
+        openingText
+        1s
+        .35s
+        ease
+        forwards;
+}
+
+
+/* =========================================================
+   BREAK / REVEAL STATE
+   ========================================================= */
+
+.opening-animation.break-open .heart-left {
+
+    transform:
+        translateX(-135vw)
+        translateY(-15px)
+        rotate(-18deg);
+
+    opacity: 0;
+}
+
+
+.opening-animation.break-open .heart-right {
+
+    transform:
+        translateX(135vw)
+        translateY(-15px)
+        rotate(18deg);
+
+    opacity: 0;
+}
+
+
+.opening-animation.break-open .opening-glow {
+
+    animation:
+        openingFlash
+        .9s
+        ease
+        forwards;
+}
+
+
+.opening-animation.break-open .opening-text {
+
+    opacity: 0;
+
+    transform:
+        translateY(20px);
+
+    transition:
+        .5s ease;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes heartAppear {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(.3)
+            rotate(-8deg);
+    }
+
+    60% {
+        opacity: 1;
+
+        transform:
+            scale(1.08)
+            rotate(2deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+    }
+}
+
+
+@keyframes openingGlow {
+
+    0%,100% {
+        transform: scale(.8);
+
+        opacity: .45;
+    }
+
+    50% {
+        transform: scale(1.25);
+
+        opacity: .9;
+    }
+}
+
+
+@keyframes openingText {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(12px);
+    }
+
+    to {
+        opacity: .7;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes openingFlash {
+
+    0% {
+        transform: scale(1);
+
+        opacity: .8;
+    }
+
+    45% {
+        transform: scale(2.3);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(5);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes openingBackground {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .opening-heart {
+        width: 90px;
+        height: 90px;
+    }
+
+    .heart-piece {
+        width: 50px;
+        height: 80px;
+
+        font-size: 85px;
+        line-height: 70px;
+    }
+
+    .opening-text {
+        top: calc(50% + 75px);
+
+        font-size: 18px;
+    }
+}
+
